@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EcoGardenApp2"
+        tools:targetApi="31">
+        <activity
+            android:name=".CompartirLogros"
+            android:exported="false" />
+        <activity
+            android:name=".TipsAvanzado"
+            android:exported="false" />
+        <activity
+            android:name=".TipsIntermedio"
+            android:exported="false" />
+        <activity
+            android:name=".TipsPrincipiante"
+            android:exported="false" />
+        <activity
+            android:name=".TipsHome"
+            android:exported="false" />
+        <activity
+            android:name=".EstadisticaCrecimiento"
+            android:exported="false" />
+        <activity
+            android:name=".EstadisticaEnergia"
+            android:exported="false" />
+        <activity
+            android:name=".EstadisticaAgua"
+            android:exported="false" />
+        <activity
+            android:name=".EstadisticaAbono"
+            android:exported="false" />
+        <activity
+            android:name=".FotoPlanta"
+            android:exported="false" />
+        <activity
+            android:name=".RegistroCrecimiento"
+            android:exported="false" />
+        <activity
+            android:name=".RegistroEnergia"
+            android:exported="false" />
+        <activity
+            android:name=".RegistroAgua"
+            android:exported="false" />
+        <activity
+            android:name=".RegistroAbono"
+            android:exported="false" />
+        <activity
+            android:name=".Categorias"
+            android:exported="false" />
+        <activity
+            android:name=".CrearHuerto"
+            android:exported="false" />
+        <activity
+            android:name=".ZonaNavegacion"
+            android:exported="false" />
+        <activity
+            android:name=".Recuperar2Contrasena"
+            android:exported="false" />
+        <activity
+            android:name=".RecuperarContrasena"
+            android:exported="false" />
+        <activity
+            android:name=".Registro3Usuario"
+            android:exported="false" />
+        <activity
+            android:name=".Registro2Usuario"
+            android:exported="false" />
+        <activity
+            android:name=".RegistroUsuario"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

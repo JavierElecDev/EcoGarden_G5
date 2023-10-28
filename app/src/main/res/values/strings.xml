@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">EcoGardenApp2</string>
+    <string name="txtV_Registro">¿Aún no estas registrado?</string>
+    <string name="btn_continuar">Continuar</string>
+    <string name="btn_descriptionBack">Regresar</string>
+    <string name="btn_aceptoTerminos">Registrarse</string>
+    <string name="btn_restablecerContra">Restablecer</string>
+    <string name="btn_nuevaContrasena">Aceptar</string>
+    <string name="btn_huertoSeleccionado">Ir al huerto seleccionado</string>
+    <string name="btn_crearHuerto">Ingresar Huerto</string>
+    <string name="btn_crearHuerto1">Crear</string>
+    <string name="btn_cateAbono">Abono</string>
+    <string name="btn_cateAgua">Agua</string>
+    <string name="btn_cateEnergia">Energía</string>
+    <string name="btn_cateCrecimiento">Crecimiento</string>
+    <string name="btn_estadisticas">Estadísticas</string>
+    <string name="btn_calcular">Calcular</string>
+    <string name="btn_descriptionhome">Home</string>
+    <string name="btn_descriptionFotoI">Foto inicial</string>
+    <string name="btn_descriptionFotoF">Foto final</string>
+    <string name="btn_guardarCambios">Guardar cambios</string>
+    <string name="btn_categorias">Categorías</string>
+    <string name="btn_energia">Energía</string>
+    <string name="btn_crecimiento">Crecimiento</string>
+    <string name="btn_abono">Abono</string>
+    <string name="btn_tips">Tips</string>
+    <string name="btn_principiante">Principiante</string>
+    <string name="btn_intermedio">Intermedio</string>
+    <string name="btn_avanzado">Avanzado</string>
+    <string name="btn_logros">Tus logros</string>
+    <string name="btn_compartir">Compartir</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>
