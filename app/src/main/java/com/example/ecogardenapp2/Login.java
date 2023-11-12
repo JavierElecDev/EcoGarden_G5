@@ -17,7 +17,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        ir_ventana_zonavegacion = (Button) findViewById(R.id.comenzar);
+        ir_ventana_zonavegacion = (Button) findViewById(R.id.log_comenzar);
 
         ir_ventana_zonavegacion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,7 +27,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        TextView registro = findViewById(R.id.textRegistro);
+        TextView registro = findViewById(R.id.log_txtRegistro);
         registro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,7 +37,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) TextView contrasena = findViewById(R.id.textContrasena);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) TextView contrasena = findViewById(R.id.log_txtOlvidoContraseña);
         contrasena.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

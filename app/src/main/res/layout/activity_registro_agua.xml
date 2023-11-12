@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegistroAgua"
-    android:background="@drawable/lregistroagua">
+    android:background="@drawable/fondo_pantallas_secundaria">
 
     <Button
         android:id="@+id/calcularAgua"

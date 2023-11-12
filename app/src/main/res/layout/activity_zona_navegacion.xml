@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ZonaNavegacion"
-    android:background="@drawable/hmainscreen1zonanavegacion">
+    android:background="@drawable/fondo_pantallas_principal">
 
 
     <Button
