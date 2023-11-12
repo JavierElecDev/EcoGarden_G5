@@ -17,8 +17,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.955" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.36" />
 
     <ImageButton
         android:id="@+id/btn_back"
@@ -33,6 +33,244 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023"
         app:srcCompat="@android:drawable/ic_menu_revert" />
+
+    <ScrollView
+        android:layout_width="377dp"
+        android:layout_height="508dp"
+        android:layout_marginTop="12dp"
+        android:background="#99d7f396"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_back"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/reg_tvNombres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Nombres:"
+                android:textColor="#2047f3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/reg_nombre"
+                android:layout_width="330dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/reg_edit_txt_perzonalizado"
+                android:inputType="text"
+                app:layout_constraintTop_toBottomOf="@+id/reg_tvNombres"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/reg_tvApellidos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Apellidos:"
+                android:textColor="#2047f3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/reg_nombre" />
+
+            <EditText
+                android:id="@+id/reg_Apellidos"
+                android:layout_width="330dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/reg_edit_txt_perzonalizado"
+                android:inputType="text"
+                app:layout_constraintTop_toBottomOf="@+id/reg_tvApellidos"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/reg_ciudad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Ciudad:"
+                android:textColor="#2047f3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/reg_Apellidos" />
+
+            <Spinner
+                android:id="@+id/reg_spinner_ciudad"
+                android:layout_width="330dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/reg_edit_txt_perzonalizado"
+                app:layout_constraintTop_toBottomOf="@+id/reg_ciudad"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/reg_tvDireccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Direccion:"
+                android:textColor="#2047f3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/reg_spinner_ciudad" />
+
+            <EditText
+                android:id="@+id/reg_direccion"
+                android:layout_width="330dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/reg_edit_txt_perzonalizado"
+                android:inputType="text"
+                app:layout_constraintTop_toBottomOf="@+id/reg_tvDireccion"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/reg_tvtelefono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Telefono:"
+                android:textColor="#2047f3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/reg_direccion" />
+
+            <EditText
+                android:id="@+id/reg_telefono"
+                android:layout_width="330dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/reg_edit_txt_perzonalizado"
+                android:inputType="phone"
+                app:layout_constraintTop_toBottomOf="@+id/reg_tvtelefono"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/reg_tvcorreoE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Correo Electronico:"
+                android:textColor="#2047f3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/reg_telefono" />
+
+            <EditText
+                android:id="@+id/reg_correoE"
+                android:layout_width="330dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/reg_edit_txt_perzonalizado"
+                android:inputType="textEmailAddress"
+                app:layout_constraintTop_toBottomOf="@+id/reg_tvcorreoE"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/reg_tvconf_correoE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Confirmar Correo Electronico:"
+                android:textColor="#2047f3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/reg_correoE" />
+
+            <EditText
+                android:id="@+id/reg_conf_correoE"
+                android:layout_width="330dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/reg_edit_txt_perzonalizado"
+                android:inputType="textEmailAddress"
+                app:layout_constraintTop_toBottomOf="@+id/reg_tvconf_correoE"
+                tools:layout_editor_absoluteX="0dp"
+                />
+
+            <TextView
+                android:id="@+id/reg_tvcontrasena"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Contraseña:"
+                android:textColor="#2047f3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/reg_conf_correoE" />
+
+            <EditText
+                android:id="@+id/reg_contrasena"
+                android:layout_width="330dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/reg_edit_txt_perzonalizado"
+                android:inputType="textPassword"
+                app:layout_constraintTop_toBottomOf="@+id/reg_contrasena"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/reg_tvconf_contrasena"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Confirma la Contraseña:"
+                android:textColor="#2047f3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/reg_contrasena" />
+
+            <EditText
+                android:id="@+id/reg_conf_contrasena"
+                android:layout_width="330dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/reg_edit_txt_perzonalizado"
+                android:inputType="textPassword"
+                app:layout_constraintTop_toBottomOf="@+id/reg_tvconf_contrasena"
+                tools:layout_editor_absoluteX="0dp"
+                android:layout_marginBottom="20dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="596dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo1_ecogarden_mod"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
