@@ -5,43 +5,95 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login"
-    android:background="@drawable/blogin">
+    android:background="@drawable/fondo_pantallas_principal">
 
     <Button
-        android:id="@+id/comenzar"
+        android:id="@+id/log_comenzar"
         android:layout_width="169dp"
-        android:layout_height="64dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="152dp"
         android:backgroundTint="#36061D"
         android:text="Comenzar"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.716" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textRegistro"
+        android:id="@+id/log_txtRegistro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="                                                                                                                      "
+        android:text="¿Aún no estas registrado?"
+        android:textColor="#b6720e"
+        android:textSize="26sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/log_txtOlvidoContraseña"
+        app:layout_constraintVertical_bias="0.405" />
+
+    <TextView
+        android:id="@+id/log_txtOlvidoContraseña"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Olvidaste la contraseña?"
+        android:textColor="#CF1A0E"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/log_comenzar"
+        app:layout_constraintVertical_bias="0.217" />
+
+    <ImageView
+        android:id="@+id/log_imgLogo1"
+        android:layout_width="335dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logoecogarden1" />
+
+    <ImageView
+        android:id="@+id/log_imgusericon"
+        android:layout_width="127dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/log_imgLogo1"
+        app:srcCompat="@drawable/log_img_user" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Usuario:"
+        android:textColor="#063375"
+        android:textSize="24dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88"/>
+        app:layout_constraintTop_toBottomOf="@+id/log_imgusericon" />
 
-    <TextView
-        android:id="@+id/textContrasena"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="                                                                               "
-        app:layout_constraintBottom_toBottomOf="parent"
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="290dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/log_edit_txt_perzonalizado"
+        android:inputType="textEmailAddress"
+        android:hint="Ingresa el correo electronico"
+        android:textColorHint="@color/white"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.807" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Categorias"
-    android:background="@drawable/jmainscreen2categorias">
+    android:background="@drawable/fondo_pantallas_principal">
 
     <Button
         android:id="@+id/cateAbono"
