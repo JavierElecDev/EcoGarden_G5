@@ -73,7 +73,7 @@
             android:name=".Registro3Usuario"
             android:exported="false" />
         <activity
-            android:name=".Registro2Usuario"
+            android:name=".TerminosCondiciones"
             android:exported="false" />
         <activity
             android:name=".RegistroUsuario"

@@ -22,7 +22,7 @@ public class RegistroUsuario extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent continuarActividad = new Intent(RegistroUsuario.this, Registro2Usuario.class);
+                Intent continuarActividad = new Intent(RegistroUsuario.this, TerminosCondiciones.class);
                 startActivity(continuarActividad);
 
             }

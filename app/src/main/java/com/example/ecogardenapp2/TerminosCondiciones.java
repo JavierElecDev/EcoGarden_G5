@@ -8,19 +8,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class Registro2Usuario extends AppCompatActivity {
+public class TerminosCondiciones extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registro2_usuario);
+        setContentView(R.layout.activity_terminos_condiciones);
 
-        Button continuar = findViewById(R.id.regContinuar);
+        Button continuar = findViewById(R.id.reg_btnRegistrarse);
         ImageButton back = findViewById(R.id.btn_back);continuar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent continuarActividad = new Intent(Registro2Usuario.this, Registro3Usuario.class);
+                Intent continuarActividad = new Intent(TerminosCondiciones.this, Registro3Usuario.class);
                 startActivity(continuarActividad);
 
             }
@@ -31,7 +31,7 @@ public class Registro2Usuario extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent backActividad = new Intent(Registro2Usuario.this, RegistroUsuario.class);
+                Intent backActividad = new Intent(TerminosCondiciones.this, RegistroUsuario.class);
                 startActivity(backActividad);
             }
         });

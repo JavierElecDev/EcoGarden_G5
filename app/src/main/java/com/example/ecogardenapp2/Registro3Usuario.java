@@ -32,7 +32,7 @@ public class Registro3Usuario extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent backActividad = new Intent(Registro3Usuario.this, Registro2Usuario.class);
+                Intent backActividad = new Intent(Registro3Usuario.this, TerminosCondiciones.class);
                 startActivity(backActividad);
             }
         });

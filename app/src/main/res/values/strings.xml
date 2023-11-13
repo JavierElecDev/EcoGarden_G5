@@ -1,7 +1,7 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">EcoGardenApp2</string>
     <string name="txtV_Registro">¿Aún no estas registrado?</string>
-    <string name="btn_continuar">Continuar</string>
+    <string name="btn_Registrarse">Registrarse</string> <!-- Antiguamente era btn_Continuar-->
     <string name="btn_descriptionBack">Regresar</string>
     <string name="btn_aceptoTerminos">Registrarse</string>
     <string name="btn_restablecerContra">Restablecer</string>
@@ -30,7 +30,42 @@
     <string name="btn_logros">Tus logros</string>
     <string name="btn_compartir">Compartir</string>
 
+    <string name="terminoscondiciones"
+        tools:ignore="ExtraText">
+        Términos y condiciones de la aplicación de EcoGarden
+        Estos términos y condiciones (los "Términos") rigen el uso de la aplicación de huertos (la "Aplicación")
+        por parte de los usuarios (los "Usuarios"). Al utilizar la Aplicación, los Usuarios aceptan estos Términos.
 
+        Propiedad intelectual
+
+        La Aplicación y su contenido (incluyendo, pero sin limitarse a, texto, imágenes, código, audio y video)
+        son propiedad de [nombre de la empresa] y están protegidos por las leyes de derechos de autor y otras leyes
+        de propiedad intelectual. Los Usuarios no pueden copiar, distribuir, modificar, crear trabajos derivados,
+        exhibir o realizar públicamente, transmitir o vender la Aplicación o su contenido sin el consentimiento
+        expreso por escrito de [nombre de la empresa].
+
+        Uso de la Aplicación
+
+        Los Usuarios deben utilizar la Aplicación de conformidad con las leyes aplicables y estos Términos.
+        Los Usuarios no pueden utilizar la Aplicación para ningún propósito ilegal o prohibido.
+
+        Información personal
+
+        [Nombre de la empresa] puede recopilar información personal de los Usuarios, como su nombre,
+        dirección de correo electrónico, número de teléfono y fecha de nacimiento.
+        utilizará esta información para proporcionar los servicios de la Aplicación,
+        para mejorar la Aplicación y para ponerse en contacto con los Usuarios.
+
+        Ecogarden puede compartir información personal con terceros, como proveedores de servicios que ayudan a
+        Ecogarden a proporcionar los servicios de la Aplicación. Ecogarden también puede compartir información
+        personal con terceros si Ecogarden cree que es necesario hacerlo para cumplir con la ley o para
+        proteger los derechos de [nombre de la empresa] o de sus Usuarios.
+
+        Los Usuarios tienen derecho a acceder, corregir o eliminar su información personal.
+        Para ejercer estos derechos, los Usuarios pueden ponerse en contacto con Ecogarden.
+    </string>
+
+    <string name="revisaBandeja">Revisa tu bandeja recibiras un codigo,\n el cual debes ingresar a continuacion:</string>
 
 
 
