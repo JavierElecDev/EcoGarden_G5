@@ -119,7 +119,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/log_edit_txt_perzonalizado"
         android:inputType="textPassword"
-        android:hint="Ingresa el correo electronico"
+        android:hint="Ingresa la constraseña"
         android:textColorHint="@color/white"
         android:textAlignment="center"
         android:textColor="@color/white"

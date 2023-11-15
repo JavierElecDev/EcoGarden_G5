@@ -28,6 +28,28 @@ public class Login extends AppCompatActivity {
         CorreoElectronico = (EditText) findViewById(R.id.log_et_correo);
         Contrsena = (EditText) findViewById(R.id.log_et_contrasena);
 
+        CorreoElectronico.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(b){
+                    CorreoElectronico.setHint(null);
+                }else if(!b && CorreoElectronico.getText().toString().isEmpty()){
+                    CorreoElectronico.setHint("Ingresa el Correo Electronico.");
+                }
+            }
+        });
+
+        Contrsena.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(b){
+                    Contrsena.setHint(null);
+                }else if(!b && Contrsena.getText().toString().isEmpty()){
+                    Contrsena.setHint("Ingresa la contraseña");
+                }
+            }
+        });
+
         Comenzar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,7 +57,7 @@ public class Login extends AppCompatActivity {
                 String Pass = Contrsena.getText().toString();
                 ComprobacionesLogReg Comprobar = new ComprobacionesLogReg(Login.this);
                 Comprobar.ComprobarEntradas(Correo,Pass);
-
+                Comprobar.VerficaCorreo(Correo);
                 /*
                 Intent intent = new Intent(Login.this, ZonaNavegacion.class);
                 startActivity(intent);
