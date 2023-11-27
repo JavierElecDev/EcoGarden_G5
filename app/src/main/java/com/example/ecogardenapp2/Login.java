@@ -53,7 +53,7 @@ public class Login extends AppCompatActivity {
         Comenzar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Correo = CorreoElectronico.getText().toString();
+                String Correo = CorreoElectronico.getText().toString().trim();
                 String Pass = Contrsena.getText().toString();
                 ComprobacionesLogReg Comprobar = new ComprobacionesLogReg(Login.this);
                 Comprobar.ComprobarEntradas(Correo,Pass);
