@@ -51,13 +51,10 @@ public class RegistroUsuario extends AppCompatActivity {
                 password = Password.getText().toString();
                 validaPassword = valPassword.getText().toString();
 
-                comprobar.comprobarCamposRegistro(nombres,apellidos,direccion,
-                        telefono,correoElec, validaCorreoE,password,validaPassword);
                 comprobacionPaso1 = comprobar.comprobarCamposRegistro(nombres,apellidos,direccion,
                         telefono,correoElec, validaCorreoE,password,validaPassword);
 
                 if(comprobacionPaso1){
-                    comprobar.comprobarDatosDeLogueo(correoElec,validaCorreoE,password, validaPassword);
                     comprobacionPaso2 = comprobar.comprobarDatosDeLogueo(correoElec,validaCorreoE,password, validaPassword);
                 };
 
