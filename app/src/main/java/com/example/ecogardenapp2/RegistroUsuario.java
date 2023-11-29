@@ -8,19 +8,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.ecogardenapp2.clasesLogReg.ComprobacionesLogReg;
+import com.example.ecogardenapp2.clasesLogReg.SpinCiudades;
 
 public class RegistroUsuario extends AppCompatActivity {
 
     private EditText Nombres, Apellidos, Direccion, Telefono, CorreoE;
     private EditText valCorreoE, Password, valPassword;
+    private Spinner ciudades;
     private Button continuarRegistro;
     private String nombres, apellidos, direccion, telefono, correoElec;
     private String validaCorreoE, password, validaPassword;
     private boolean comprobacionPaso1, comprobacionPaso2;
-
+    private SpinCiudades ciudad = new SpinCiudades();
     ComprobacionesLogReg comprobar = new ComprobacionesLogReg(RegistroUsuario.this);
 
     @Override
@@ -36,7 +39,8 @@ public class RegistroUsuario extends AppCompatActivity {
         Password = (EditText) findViewById(R.id.reg_contrasena);
         valPassword = (EditText) findViewById(R.id.reg_conf_contrasena);
         continuarRegistro = (Button) findViewById(R.id.registroContinuar);
-
+        ciudades = (Spinner) findViewById(R.id.reg_spinner_ciudad);
+        ciudades.setAdapter(ciudad.adaptadorCiudades(RegistroUsuario.this));
         ImageButton back = findViewById(R.id.btn_back);
 
         continuarRegistro.setOnClickListener(new View.OnClickListener() {
