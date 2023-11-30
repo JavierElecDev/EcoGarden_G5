@@ -6,6 +6,9 @@ import android.content.DialogInterface;
 
 import java.io.Serializable;
 
+/*
+ *  Implementamos la clase Serializable para poder enviar informacion entre activities
+ */
 public class DatosRegistro implements Serializable {
 
     private String nombres, apellidos, ciudad, direccion;

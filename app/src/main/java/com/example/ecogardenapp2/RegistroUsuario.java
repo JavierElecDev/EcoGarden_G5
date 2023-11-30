@@ -28,6 +28,8 @@ public class RegistroUsuario extends AppCompatActivity {
 
     // Chicas se instanciar un objeto para obtener el contexto y llamar los alert dialog
     ComprobacionesLogReg comprobar = new ComprobacionesLogReg(RegistroUsuario.this);
+
+    //Se instancia un objeto de la clase "DatosRegistro" para guardar datos
     DatosRegistro datosTemporales = new DatosRegistro();
 
     @Override
@@ -77,6 +79,10 @@ public class RegistroUsuario extends AppCompatActivity {
                             correoElec, password, telefonocontacto);
 
                 Intent continuarRegistro = new Intent(RegistroUsuario.this, TerminosCondiciones.class);
+                /*
+                 *el metodo "putExtra" lo usamos para enviar esta instancia del objeto a la nueva actividad,
+                 * y poder obtener los datos desde esa actividad.
+                 */
                 continuarRegistro.putExtra("datosTemporales", datosTemporales);
                 startActivity(continuarRegistro);
                 }
