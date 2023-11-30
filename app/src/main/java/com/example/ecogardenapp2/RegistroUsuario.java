@@ -12,6 +12,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.ecogardenapp2.clasesLogReg.ComprobacionesLogReg;
+import com.example.ecogardenapp2.clasesLogReg.DatosRegistro;
 import com.example.ecogardenapp2.clasesLogReg.SpinCiudades;
 
 public class RegistroUsuario extends AppCompatActivity {
@@ -23,8 +24,11 @@ public class RegistroUsuario extends AppCompatActivity {
     private String nombres, apellidos, direccion, telefono, correoElec;
     private String validaCorreoE, password, validaPassword;
     private boolean comprobacionPaso1, comprobacionPaso2;
-    private SpinCiudades ciudad = new SpinCiudades();
+    SpinCiudades ciudad = new SpinCiudades();
+
+    // Chicas se instanciar un objeto para obtener el contexto y llamar los alert dialog
     ComprobacionesLogReg comprobar = new ComprobacionesLogReg(RegistroUsuario.this);
+    DatosRegistro datosTemporales = new DatosRegistro();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,7 @@ public class RegistroUsuario extends AppCompatActivity {
         continuarRegistro = (Button) findViewById(R.id.registroContinuar);
         ciudades = (Spinner) findViewById(R.id.reg_spinner_ciudad);
         ciudades.setAdapter(ciudad.adaptadorCiudades(RegistroUsuario.this));
+
         ImageButton back = findViewById(R.id.btn_back);
 
         continuarRegistro.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +60,7 @@ public class RegistroUsuario extends AppCompatActivity {
                 password = Password.getText().toString();
                 validaPassword = valPassword.getText().toString();
 
+
                 comprobacionPaso1 = comprobar.comprobarCamposRegistro(nombres,apellidos,direccion,
                         telefono,correoElec, validaCorreoE,password,validaPassword);
 
@@ -64,13 +70,16 @@ public class RegistroUsuario extends AppCompatActivity {
 
                 if(comprobacionPaso2){
                     Toast.makeText(RegistroUsuario.this, "Comprobcion Correcta puede continuar...", Toast.LENGTH_LONG).show();
+                    int telefonocontacto = Integer.parseInt(telefono);
+                    String ciudadIngresada = String.valueOf(ciudades.getSelectedItem());
+
+                    datosTemporales.almacenarDatos(nombres,apellidos,ciudadIngresada,direccion,
+                            correoElec, password, telefonocontacto);
+
+                Intent continuarRegistro = new Intent(RegistroUsuario.this, TerminosCondiciones.class);
+                continuarRegistro.putExtra("datosTemporales", datosTemporales);
+                startActivity(continuarRegistro);
                 }
-
-
-                /*
-                Intent continuarActividad = new Intent(RegistroUsuario.this, TerminosCondiciones.class);
-                startActivity(continuarActividad);*/
-
             }
         });
 

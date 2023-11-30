@@ -41,7 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox4"
+        app:layout_constraintTop_toBottomOf="@+id/checkCondiciones"
         app:layout_constraintVertical_bias="0.205" />
 
     <ScrollView
@@ -73,7 +73,7 @@
     </ScrollView>
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/checkTerminos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -89,7 +89,7 @@
         app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
     <CheckBox
-        android:id="@+id/checkBox4"
+        android:id="@+id/checkCondiciones"
         android:layout_width="218dp"
         android:layout_height="46dp"
         android:layout_marginTop="8dp"
@@ -102,7 +102,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.378"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
+        app:layout_constraintTop_toBottomOf="@+id/checkTerminos" />
 
     <TextView
         android:id="@+id/textView3"
