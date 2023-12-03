@@ -35,7 +35,7 @@ public class TerminosCondiciones extends AppCompatActivity {
             public void onClick(View view) {
 
                 if(terminos.isChecked() && condiciones.isChecked()){
-                    datosTemporales.enviarDatosDeRegistro(TerminosCondiciones.this);
+                    datosTemporales.mensajeRegistro(TerminosCondiciones.this);
                     datosTemporales.registrarUsuario(TerminosCondiciones.this);
                 }else if(terminos.isChecked()){
                     Toast.makeText(TerminosCondiciones.this, "Debes aceptar las condiciones", Toast.LENGTH_LONG).show();

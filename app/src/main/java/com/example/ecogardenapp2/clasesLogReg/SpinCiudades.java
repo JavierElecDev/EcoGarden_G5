@@ -6,7 +6,7 @@ import android.widget.ArrayAdapter;
 
 public class SpinCiudades {
    //Creamos el array con las ciudades
-   public static String[] ciudades = {"Bogotá", "Medellín", "Cali", "Barranquilla", "Cartagena",
+   public static String[] ciudades = {"Seleccione Ciudad.","Bogotá", "Medellín", "Cali", "Barranquilla", "Cartagena",
             "Bucaramanga", "Pereira", "Ibagué", "Manizales", "Villavicencio"};
 
    /*

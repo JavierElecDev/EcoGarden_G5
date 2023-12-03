@@ -3,6 +3,8 @@ package com.example.ecogardenapp2.clasesLogReg;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Handler;
+import android.os.Looper;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -44,29 +46,27 @@ public class DatosRegistro implements Serializable {
         this.telefono = telefonoTemp;
     }
 
-    public void enviarDatosDeRegistro(Context destinoVentana){
+    public void mensajeRegistro(Context TerminosCondiciones){
 
-        AlertDialog.Builder alertDatosEnvio = new AlertDialog.Builder(destinoVentana);
-        alertDatosEnvio.setTitle("Registro Completo");
-        alertDatosEnvio.setMessage("Se enviarán los siguientes datos: "
-                +"\n" + nombres + "\n" + apellidos + "\n" + ciudad + "\n" + direccion
-                + "\n" + correoElectronico + "\n" + password  + "\n" + telefono);
-        alertDatosEnvio.setCancelable(false);
-        alertDatosEnvio.setPositiveButton("Finalizar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int i) {
-                dialog.cancel();
-            }
-        });
-        AlertDialog alertDialog = alertDatosEnvio.create();
-        alertDialog.show();
+        AlertDialog.Builder RegistroCompleto = new AlertDialog.Builder(TerminosCondiciones);
+        RegistroCompleto.setMessage("El Registro se ha completado.").setCancelable(false)
+                .setPositiveButton("Continuar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+        AlertDialog titulo = RegistroCompleto.create();
+        titulo.setTitle("Felicidades Registro completo.");
+        titulo.show();
     }
 
     //Metodo para registrar los usuarios en firebase
-    public void registrarUsuario(final Context destinoVentana){
-        //obtenemos la instancia
+    public void registrarUsuario(Context TerminosCondiciones){
+        //obtenemos la instancia a firebase
         mFirestore = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
+        //este objeto nos ayuda a crear el usuario con los parametro de correo y contraseña
         mAuth.createUserWithEmailAndPassword(correoElectronico, password).addOnCompleteListener(
                 new OnCompleteListener<AuthResult>() {
                     @Override
@@ -87,36 +87,36 @@ public class DatosRegistro implements Serializable {
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void unused) {
-                                            AlertDialog.Builder RegistroCompleto = new AlertDialog.Builder(destinoVentana);
-                                            RegistroCompleto.setMessage("El Registro se ha completado.").setCancelable(false)
-                                                    .setPositiveButton("Continuar", new DialogInterface.OnClickListener() {
-                                                        @Override
-                                                        public void onClick(DialogInterface dialogInterface, int i) {
-                                                            dialogInterface.cancel();
-                                                        }
-                                                    });
-                                            AlertDialog titulo = RegistroCompleto.create();
-                                            titulo.setTitle("Felicidades Registro completo.");
-                                            titulo.show();
+                                            //averigurar por que no puedo usar toak o alert aqui!!!
                                         }
                                     })
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
-                                            Toast.makeText(destinoVentana, "Error no se pudo crear el usuario", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(TerminosCondiciones, "Error no se pudo crear el usuario", Toast.LENGTH_LONG).show();
                                         }
                                     });
                         } else {
-                            Toast.makeText(destinoVentana, "Error: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            AlertDialog.Builder FalloConexion = new AlertDialog.Builder(TerminosCondiciones);
+                            FalloConexion.setMessage("Error Fallo Conexion Base de Datos." +
+                                            "Verifica la conexion a Internet o comunicate con soporpete").setCancelable(false)
+                                    .setPositiveButton("Continuar", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            dialogInterface.cancel();
+                                        }
+                                    });
+                            AlertDialog titulo = FalloConexion.create();
+                            titulo.setTitle("Erorr de conexion.");
+                            titulo.show();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(destinoVentana,
+                Toast.makeText(TerminosCondiciones,
                         "Error de conexión, no se puede crear el Registro", Toast.LENGTH_LONG).show();
             }
         });
-
     }
 }
