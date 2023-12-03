@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 
 import com.example.ecogardenapp2.CrearHuerto;
 import com.example.ecogardenapp2.Login;
+import com.example.ecogardenapp2.ZonaNavegacion;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -141,7 +142,7 @@ public class DatosRegistro implements Serializable {
                 public void onComplete(@NonNull Task<AuthResult> task) {
 
                     if(task.isSuccessful()){
-                        Intent CreaHuerto = new Intent(TerminosCondiciones, CrearHuerto.class);
+                        Intent CreaHuerto = new Intent(TerminosCondiciones, ZonaNavegacion.class);
                         TerminosCondiciones.startActivity(CreaHuerto);
                     }else{
                         Toast.makeText(TerminosCondiciones,
