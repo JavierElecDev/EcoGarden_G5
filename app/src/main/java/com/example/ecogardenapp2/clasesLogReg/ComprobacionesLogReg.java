@@ -27,7 +27,7 @@ public class ComprobacionesLogReg {
     }
 
     //Metodo que comprueba que los campos no esten vacios
-    public void ComprobarEntradas(String CorreoE, String ContrasenaU) {
+    public boolean ComprobarEntradas(String CorreoE, String ContrasenaU) {
 
         this.Correo = CorreoE;
         this.Contrasena = ContrasenaU;
@@ -51,12 +51,17 @@ public class ComprobacionesLogReg {
         if (Correo.isEmpty() || Contrasena.isEmpty()) {
             AlertDialog alertDialog = alertaCamposVacios.create();
             alertDialog.show();
+            return false;
         } else if (Correo.isEmpty()) {
             AlertDialog alertDialog = alertaCamposVacios.create();
             alertDialog.show();
+            return false;
         } else if (Contrasena.isEmpty()) {
             AlertDialog alertDialog = alertaCamposVacios.create();
             alertDialog.show();
+            return false;
+        }else {
+            return true;
         }
     }
 

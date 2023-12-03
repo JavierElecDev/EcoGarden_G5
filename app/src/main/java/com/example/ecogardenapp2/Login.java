@@ -1,22 +1,35 @@
 package com.example.ecogardenapp2;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ecogardenapp2.clasesLogReg.ComprobacionesLogReg;
+import com.example.ecogardenapp2.clasesLogReg.DatosRegistro;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
 
     private Button Comenzar;
     private TextView OlvidoContrasena, Registro;
     private EditText CorreoElectronico, Contrsena;
+    FirebaseAuth mAuth;
+    String Correo, Pass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +41,18 @@ public class Login extends AppCompatActivity {
         CorreoElectronico = (EditText) findViewById(R.id.log_et_correo);
         Contrsena = (EditText) findViewById(R.id.log_et_contrasena);
 
+        mAuth = FirebaseAuth.getInstance();
+
+        ComprobacionesLogReg Comprobar = new ComprobacionesLogReg(Login.this);
+        DatosRegistro inicia = new DatosRegistro();
+
+        //aplicamos un evento de escucha para que se muestre el hint si el campo esta viacio
         CorreoElectronico.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean b) {
-                if(b){
+                if (b) {
                     CorreoElectronico.setHint(null);
-                }else if(!b && CorreoElectronico.getText().toString().isEmpty()){
+                } else if (!b && CorreoElectronico.getText().toString().isEmpty()) {
                     CorreoElectronico.setHint("Ingresa el Correo Electronico.");
                 }
             }
@@ -42,9 +61,9 @@ public class Login extends AppCompatActivity {
         Contrsena.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean b) {
-                if(b){
+                if (b) {
                     Contrsena.setHint(null);
-                }else if(!b && Contrsena.getText().toString().isEmpty()){
+                } else if (!b && Contrsena.getText().toString().isEmpty()) {
                     Contrsena.setHint("Ingresa la contraseña");
                 }
             }
@@ -53,16 +72,15 @@ public class Login extends AppCompatActivity {
         Comenzar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Correo = CorreoElectronico.getText().toString().trim();
-                String Pass = Contrsena.getText().toString();
-                ComprobacionesLogReg Comprobar = new ComprobacionesLogReg(Login.this);
-                Comprobar.ComprobarEntradas(Correo,Pass);
-                Comprobar.VerficaCorreo(Correo);
-                /*
-                Intent intent = new Intent(Login.this, ZonaNavegacion.class);
-                startActivity(intent);
-                 */
+                Correo = CorreoElectronico.getText().toString().trim();
+                Pass = Contrsena.getText().toString();
 
+                boolean comprueba = Comprobar.ComprobarEntradas(Correo, Pass);
+                boolean verifica = Comprobar.VerficaCorreo(Correo);
+
+                if (comprueba && verifica) {
+                    inicia.iniciarSersion(Correo, Pass,Login.this);
+                }
             }
         });
 

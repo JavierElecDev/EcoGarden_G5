@@ -3,12 +3,14 @@ package com.example.ecogardenapp2.clasesLogReg;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.os.Handler;
-import android.os.Looper;
+import android.content.Intent;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.example.ecogardenapp2.CrearHuerto;
+import com.example.ecogardenapp2.Login;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -33,6 +35,7 @@ public class DatosRegistro implements Serializable {
     private String nombres, apellidos, ciudad, direccion;
     private String correoElectronico, password;
     private int telefono;
+    public boolean exito;
 
     public void almacenarDatos(String nombresTemp, String apellidosTemp, String ciudadTemp,
                                String direccionTemp, String correoETemp, String passTemp,
@@ -54,6 +57,8 @@ public class DatosRegistro implements Serializable {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.cancel();
+                        Intent regresoLogin = new Intent(TerminosCondiciones, Login.class);
+                        TerminosCondiciones.startActivity(regresoLogin);
                     }
                 });
         AlertDialog titulo = RegistroCompleto.create();
@@ -69,8 +74,10 @@ public class DatosRegistro implements Serializable {
         //este objeto nos ayuda a crear el usuario con los parametro de correo y contraseña
         mAuth.createUserWithEmailAndPassword(correoElectronico, password).addOnCompleteListener(
                 new OnCompleteListener<AuthResult>() {
+                    //se sobre escribe el metodo para comprobar que la tarea se llevo acabo
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        //si la tarea de conexion es correcta guardamos los datos en un map
                         if (task.isSuccessful()) {
                             String id = mAuth.getCurrentUser().getUid();
                             Map<String, Object> map = new HashMap<>();
@@ -83,6 +90,11 @@ public class DatosRegistro implements Serializable {
                             map.put("password", password);
                             map.put("phone", telefono);
 
+                            /*
+                             * chicas este objeto accede a los metodos de la clase firebase store y auth,
+                             * por lo que seteamos los datos mediante le mapa y obtenemos el id,
+                             * que son los parametros quese recibe en la base de datos.
+                             */
                             mFirestore.collection("user").document(id).set(map)
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
@@ -96,10 +108,10 @@ public class DatosRegistro implements Serializable {
                                             Toast.makeText(TerminosCondiciones, "Error no se pudo crear el usuario", Toast.LENGTH_LONG).show();
                                         }
                                     });
-                        } else {
+                        } else {// si hay algun error de conexion o no se puede crear el usuario
                             AlertDialog.Builder FalloConexion = new AlertDialog.Builder(TerminosCondiciones);
                             FalloConexion.setMessage("Error Fallo Conexion Base de Datos." +
-                                            "Verifica la conexion a Internet o comunicate con soporpete").setCancelable(false)
+                                            "Error General comunicate con soporpete").setCancelable(false)
                                     .setPositiveButton("Continuar", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialogInterface, int i) {
@@ -115,8 +127,48 @@ public class DatosRegistro implements Serializable {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(TerminosCondiciones,
-                        "Error de conexión, no se puede crear el Registro", Toast.LENGTH_LONG).show();
+                        "Error de conexión, no se puede crear el Registro", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    //metodo para iniciar sesión
+    public void iniciarSersion(String correo, String password, Context TerminosCondiciones){
+        mAuth = FirebaseAuth.getInstance();
+        try {
+            mAuth.signInWithEmailAndPassword(correo, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+
+                    if(task.isSuccessful()){
+                        Intent CreaHuerto = new Intent(TerminosCondiciones, CrearHuerto.class);
+                        TerminosCondiciones.startActivity(CreaHuerto);
+                    }else{
+                        Toast.makeText(TerminosCondiciones,
+                                "Error en conexion intenta de nuevo!!",Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    AlertDialog.Builder FalloConexion = new AlertDialog.Builder(TerminosCondiciones);
+                    FalloConexion.setMessage("Error Fallo Conexion Base de Datos." +
+                                    "Error General comunicate con soporte").setCancelable(false)
+                            .setPositiveButton("Continuar", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.cancel();
+                                }
+                            });
+                    AlertDialog titulo = FalloConexion.create();
+                    titulo.setTitle("Erorr de conexion.");
+                    titulo.show();
+                }
+            });
+        }catch (Exception e) {
+            // por fi falla buscamos el error
+            Log.e("Login", "Error al iniciar sesion:", e);
+            Toast.makeText(TerminosCondiciones, "Error inesperado al iniciar sesión. Por favor, intente nuevamente.", Toast.LENGTH_LONG).show();
+        }
     }
 }
