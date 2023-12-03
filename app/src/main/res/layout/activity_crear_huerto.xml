@@ -7,19 +7,82 @@
     tools:context=".CrearHuerto"
     android:background="@drawable/fondo_pantallas_principal">
 
+    <ImageView
+        android:id="@+id/creaHue_imgLogo1"
+        android:layout_width="335dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logoecogarden1"
+        android:scaleType="centerCrop"/>
+
+
+    <TextView
+        android:id="@+id/creaHue_tx_crearHuerto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Crea tu Huerto"
+        android:textColor="#934a2e"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/creaHue_imgLogo1" />
+
+    <EditText
+        android:id="@+id/creaHue_et_nombreHue"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/white"
+        android:hint="Nombre del huerto"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="#6e92c8"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/creaHue_tx_crearHuerto" />
+
+    <Spinner
+        android:id="@+id/creaHue_spinner_tam"
+        android:layout_width="330dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/creaHue_et_nombreHue" />
+
+    <Spinner
+        android:id="@+id/creaHue_spinner_tipo"
+        android:layout_width="330dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/creaHue_spinner_tam" />
+
     <Button
         android:id="@+id/crearHuerto1"
         android:layout_width="151dp"
         android:layout_height="48dp"
+        android:layout_marginBottom="56dp"
         android:backgroundTint="#FFFFFF"
         android:text="@string/btn_crearHuerto1"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.539"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.925" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.512" />
 
     <ImageButton
         android:id="@+id/btn_back"
@@ -32,9 +95,38 @@
         app:layout_constraintHorizontal_bias="0.98"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.995"
+        app:layout_constraintVertical_bias="0.927"
         app:srcCompat="@android:drawable/ic_menu_revert"
-        tools:ignore="ImageContrastCheck" />
+        tools:ignore="ImageContrastCheck"
+        android:background="@drawable/imagenredondeo"/>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="111dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/imagenredondeo"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine"
+        app:srcCompat="@drawable/save" />
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine"
+        android:layout_width="326dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/imagencornercurv"
+        android:ems="10"
+        android:hint="Agrega una\n descripcion"
+        android:inputType="textMultiLine"
+        android:textAlignment="center"
+        android:textColor="#3e4cc8"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/creaHue_spinner_tipo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,23 +8,38 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class ZonaNavegacion extends AppCompatActivity {
+
+    private Button crearHuerto, irHuerto;
+    private ImageView imdAddHuerto;
+    private Spinner seleccionHuerto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zona_navegacion);
 
-        Button crearHuerto = findViewById(R.id.crearHuerto);
-        Button irHuerto = findViewById(R.id.huertoSeleccionado);
+        crearHuerto = (Button) findViewById(R.id.zonaNav_crearHuerto);
+        irHuerto = (Button) findViewById(R.id.huertoSeleccionado);
+        imdAddHuerto = (ImageView) findViewById(R.id.zonaNav_imgAdd);
+        seleccionHuerto = (Spinner)findViewById(R.id.zonaNav_spinner_slecHue);
         ImageButton back = findViewById(R.id.btn_back);
 
         crearHuerto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent crearHuertoActividad = new Intent(ZonaNavegacion.this, CrearHuerto.class);
+                startActivity(crearHuertoActividad);
+            }
+        });
 
+        imdAddHuerto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Intent crearHuertoActividad = new Intent(ZonaNavegacion.this, CrearHuerto.class);
                 startActivity(crearHuertoActividad);
             }

@@ -84,7 +84,6 @@ public class Login extends AppCompatActivity {
             }
         });
 
-
         Registro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,7 +92,6 @@ public class Login extends AppCompatActivity {
 
             }
         });
-
 
         OlvidoContrasena.setOnClickListener(new View.OnClickListener() {
             @Override
