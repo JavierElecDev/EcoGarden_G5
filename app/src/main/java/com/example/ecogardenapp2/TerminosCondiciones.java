@@ -2,7 +2,6 @@ package com.example.ecogardenapp2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -37,6 +36,7 @@ public class TerminosCondiciones extends AppCompatActivity {
 
                 if(terminos.isChecked() && condiciones.isChecked()){
                     datosTemporales.enviarDatosDeRegistro(TerminosCondiciones.this);
+                    datosTemporales.registrarUsuario(TerminosCondiciones.this);
                 }else if(terminos.isChecked()){
                     Toast.makeText(TerminosCondiciones.this, "Debes aceptar las condiciones", Toast.LENGTH_LONG).show();
                 }else if(condiciones.isChecked()){
