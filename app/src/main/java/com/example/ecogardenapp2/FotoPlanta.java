@@ -70,10 +70,10 @@ public class FotoPlanta extends AppCompatActivity implements View.OnClickListene
         imageView = findViewById(R.id.imagenMostrar);
         imageButton = findViewById(R.id.imgBtn_SubirFoto);
 
-        imageButton.setOnClickListener(new View.OnClickListener() { // Asignar un OnClickListener al ImageButton
+        imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selectImage(); // Llamar al método que permite seleccionar una imagen
+                selectImage();
             }
         });
 
@@ -242,9 +242,9 @@ public class FotoPlanta extends AppCompatActivity implements View.OnClickListene
     }
 
     private void selectImage() {
-        Intent intent = new Intent(Intent.ACTION_PICK); // Crear un Intent para seleccionar una imagen de la galería
-        intent.setType("image/*"); // Establecer el tipo de datos a imágenes
-        startActivityForResult(intent, PICK_IMAGE_REQUEST); // Lanzar el Intent y esperar el resultado
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent, PICK_IMAGE_REQUEST);
     }
 
     @Override
