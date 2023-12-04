@@ -7,6 +7,88 @@
     tools:context=".FotoPlanta"
     android:background="@drawable/fondo_pantallas_secundaria">
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/VerdeOliva"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:backgroundTint="#324807"
+            android:contentDescription="@string/Imgbtn_descriptionBack"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.044"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@android:drawable/ic_menu_revert" />
+
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#324807"
+            android:contentDescription="@string/Imbtn_descriptionhome"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.318"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/home2" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/RegCr_txtV_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/mali_bold"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:text="Tómale una foto a tu planta elegida"
+        android:textAlignment="center"
+        android:textColor="@color/Avellana"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.124" />
+
+    <TextView
+        android:layout_width="354dp"
+        android:layout_height="100dp"
+        android:background="@color/VerdeOliva"
+        android:fontFamily="@font/inter_bold"
+        android:padding="10dp"
+        android:paddingTop="20dp"
+        android:text="@string/txtV_Foto_plantaSeleccionada"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.282"
+        tools:ignore="TextSizeCheck" />
+
     <Button
         android:id="@+id/fotoPlanta"
         android:layout_width="145dp"
@@ -20,33 +102,131 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.958" />
 
-    <ImageButton
-        android:id="@+id/btn_back"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:backgroundTint="#324807"
-        android:contentDescription="@string/btn_descriptionBack"
+
+    <ImageView
+        android:id="@+id/imgV_CapturaFoto"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:drawable/ic_menu_revert" />
+        app:layout_constraintVertical_bias="0.54"
+        app:srcCompat="@drawable/iconofoto" />
+
+    <Button
+        android:id="@+id/btn_TomarFoto"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#651567"
+        android:fontFamily="@font/inter_bold"
+        android:text="Tomar foto"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.732" />
 
     <ImageButton
-        android:id="@+id/btn_home"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:backgroundTint="#324807"
-        android:contentDescription="@string/btn_descriptionhome"
+        android:id="@+id/imgBtn_Galeria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Galería"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.318"
+        app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/home2" />
+        app:layout_constraintVertical_bias="0.751"
+        app:srcCompat="@drawable/galeria" />
+
+    <TextView
+        android:layout_width="89dp"
+        android:layout_height="28dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="Galería"
+        android:textAlignment="center"
+        android:textColor="#651567"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.792" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_GirarCamara"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Girar la cámara"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.751"
+        app:srcCompat="@drawable/girarlacamara" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_SubirFoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Subir imagen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.902"
+        app:srcCompat="@drawable/subirimg" />
+
+    <TextView
+        android:id="@+id/txtV_SubirFoto"
+        android:layout_width="217dp"
+        android:layout_height="32dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="Subir imagen PNG o JPG"
+        android:textColor="#651567"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.874" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="66dp"
+        android:layout_height="72dp"
+        android:contentDescription="Logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.907"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.957"
+        app:srcCompat="@drawable/logook" />
+
+    <ImageView
+        android:id="@+id/imagenMostrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Imagen seleccionada"
+        app:layout_constraintBottom_toTopOf="@id/imgBtn_SubirFoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.659" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

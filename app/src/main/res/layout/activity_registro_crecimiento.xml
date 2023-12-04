@@ -7,72 +7,269 @@
     tools:context=".RegistroCrecimiento"
     android:background="@drawable/fondo_pantallas_secundaria">
 
-    <Button
-        android:id="@+id/calcularCrecimiento"
-        android:layout_width="145dp"
-        android:layout_height="55dp"
-        android:backgroundTint="#6D9422"
-        android:text="@string/btn_calcular"
+
+    <TextView
+        android:id="@+id/RegCr_txtV_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/mali_bold"
+        android:text="@string/txtV_RegCr_Title"
+        android:textAlignment="center"
+        android:textColor="@color/Avellana"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.812"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.844" />
+        app:layout_constraintVertical_bias="0.07999998"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"/>
 
-    <ImageButton
-        android:id="@+id/btn_back"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:backgroundTint="#324807"
-        android:contentDescription="@string/btn_descriptionBack"
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="350dp"
+        android:layout_height="550dp"
+        android:background="#D9D9D9"
+        android:orientation="vertical"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:drawable/ic_menu_revert" />
+        app:layout_constraintVertical_bias="0.75"
+        tools:ignore="TextSizeCheck">
 
-    <ImageButton
-        android:id="@+id/btn_home"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:backgroundTint="#324807"
-        android:contentDescription="@string/btn_descriptionhome"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.318"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/home2" />
 
-    <ImageButton
-        android:id="@+id/btn_fotoI"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:contentDescription="@string/btn_descriptionFotoI"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.859"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/foto" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:fontFamily="@font/inter_bold"
+            android:padding="5dp"
+            android:paddingTop="20dp"
+            android:text="@string/txtV_RegCr_elegir"
+            android:textAlignment="center"
+            android:textColor="#59500A"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="TextSizeCheck" />
 
-    <ImageButton
-        android:id="@+id/btn_fotoF"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:contentDescription="@string/btn_descriptionFotoF"
-        app:layout_constraintBottom_toBottomOf="parent"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/inter_bold"
+            android:paddingTop="20dp"
+            android:text="@string/txtV_RegCr_fechaI"
+            android:textAlignment="textStart"
+            android:textColor="#651567"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/RegCr_txtV_FechaAnterior"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#F5F5F5"
+            android:hint="Última fecha registrada"
+            android:paddingTop="10dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColorHint="@color/black" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/inter_bold"
+            android:paddingTop="20dp"
+            android:text="@string/txtV_RegCr_alturaI"
+            android:textAlignment="textStart"
+            android:textColor="#651567"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/RegCr_txtV_centimetrosAnte"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:background="#F5F5F5"
+                android:hint="Última altura registrada"
+                android:paddingTop="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textColorHint="@color/black" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/inter_bold"
+            android:paddingTop="20dp"
+            android:text="@string/txtV_RegCr_fechaF"
+            android:textAlignment="textStart"
+            android:textColor="#651567"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/RegCr_eTxt_FechaF"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#F5F5F5"
+            android:hint="@string/eTxt_Reg_fecha"
+            android:importantForAutofill="no"
+            android:inputType="date"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColorHint="@color/black"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/inter_bold"
+            android:paddingTop="20dp"
+            android:text="@string/txtV_RegCr_alturaF"
+            android:textAlignment="textStart"
+            android:textColor="#651567"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/RegCr_eTxt_centimetrosF"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:background="#F5F5F5"
+                android:hint="@string/eTxt_RegCr_Cm"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textColorHint="@color/black"
+                tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+            <ImageButton
+                android:id="@+id/RegCr_imgBtn_FotoF"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:contentDescription="@string/btn_descriptionFotoF"
+                android:src="@drawable/foto" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/RegCr_btn_guardar"
+                android:layout_width="115dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="#6D9422"
+                android:text="@string/btn_guardarCambios"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
+
+
+            <Button
+                android:id="@+id/calcularCrecimiento"
+                android:layout_width="115dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="#6D9422"
+                android:text="@string/btn_calcular"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/VerdeOliva"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.859"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.713"
-        app:srcCompat="@drawable/foto" />
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:backgroundTint="#324807"
+            android:contentDescription="@string/Imgbtn_descriptionBack"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.044"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@android:drawable/ic_menu_revert" />
+
+
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:backgroundTint="#324807"
+            android:contentDescription="@string/Imbtn_descriptionhome"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.318"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/home2" />
+
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

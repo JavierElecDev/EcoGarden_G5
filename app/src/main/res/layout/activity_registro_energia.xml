@@ -7,47 +7,249 @@
     tools:context=".RegistroEnergia"
     android:background="@drawable/fondo_pantallas_secundaria">
 
-    <Button
-        android:id="@+id/calcularEnergia"
-        android:layout_width="145dp"
-        android:layout_height="55dp"
-        android:backgroundTint="#6D9422"
+
+    <TextView
+        android:id="@+id/RegEn_txtV_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/mali_bold"
+        android:text="@string/txtV_RegEn_Title"
+        android:textAlignment="center"
+        android:textColor="@color/Avellana"
+        android:textSize="24sp"
         android:textStyle="bold"
-        android:text="@string/btn_calcular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.808"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.826" />
+        app:layout_constraintVertical_bias="0.084"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"/>
 
-    <ImageButton
-        android:id="@+id/btn_back"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:backgroundTint="#324807"
-        android:contentDescription="@string/btn_descriptionBack"
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="350dp"
+        android:layout_height="480dp"
+        android:background="#D9D9D9"
+        android:orientation="vertical"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:drawable/ic_menu_revert" />
+        app:layout_constraintVertical_bias="0.561"
+        tools:ignore="TextSizeCheck">
 
-    <ImageButton
-        android:id="@+id/btn_home"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:backgroundTint="#324807"
-        android:contentDescription="@string/btn_descriptionhome"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/inter_bold"
+            android:paddingTop="20dp"
+            android:text="@string/txtV_RegEn_potencia"
+            android:textAlignment="textStart"
+            android:textColor="#651567"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/RegEn_eTxt_Kw"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#F5F5F5"
+            android:hint="@string/eTxt_RegEn_kw"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColorHint="@color/black"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/inter_bold"
+            android:paddingTop="20dp"
+            android:text="@string/txtV_RegEn_tiempo"
+            android:textAlignment="textStart"
+            android:textColor="#651567"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/RegEn_eTxt_horas"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#F5F5F5"
+            android:hint="@string/eTxt_RegEn_horas"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColorHint="@color/black"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/inter_bold"
+            android:paddingTop="20dp"
+            android:text="@string/txtV_RegEn_valor"
+            android:textAlignment="textStart"
+            android:textColor="#651567"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/RegEn_eTxt_valor"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#F5F5F5"
+            android:hint="@string/eTxt_Reg_valor"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColorHint="@color/black"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/inter_bold"
+            android:paddingTop="20dp"
+            android:text="@string/txtV_Reg_Fecha"
+            android:textAlignment="textStart"
+            android:textColor="#651567"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/RegEn_eTxt_fecha"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#F5F5F5"
+            android:hint="@string/eTxt_Reg_fecha"
+            android:importantForAutofill="no"
+            android:inputType="date"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColorHint="@color/black"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/RegEn_btn_guardar"
+                android:layout_width="115dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="#6D9422"
+                android:text="@string/btn_guardarCambios"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
+
+
+            <Button
+                android:id="@+id/calcularEnergia"
+                android:layout_width="115dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="#6D9422"
+                android:text="@string/btn_calcular"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.318"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/home2" />
+        android:background="@color/VerdeOliva">
+
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:backgroundTint="#324807"
+            android:contentDescription="@string/Imgbtn_descriptionBack"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.044"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@android:drawable/ic_menu_revert" />
+
+
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:backgroundTint="#324807"
+            android:contentDescription="@string/Imbtn_descriptionhome"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.318"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/home2" />
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/ImgV_descriptionlogoa"
+        android:src="@drawable/logook"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

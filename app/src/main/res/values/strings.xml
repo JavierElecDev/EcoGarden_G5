@@ -1,34 +1,81 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">EcoGardenApp2</string>
-    <string name="txtV_Registro">¿Aún no estas registrado?</string>
-    <string name="btn_Registrarse">Registrarse</string> <!-- Antiguamente era btn_Continuar-->
+
     <string name="btn_descriptionBack">Regresar</string>
-    <string name="btn_aceptoTerminos">Registrarse</string>
+    <string name="btn_descriptionhome">Home</string>
+    <string name="btn_energia">Energía</string>
+    <string name="btn_crecimiento">Crecimiento</string>
+    <string name="btn_abono">Abono</string>
+    <string name="btn_tips">Tips</string>
+    <string name="btn_aceptoTerminos">Aceptar</string>
+
+    <string name="btn_continuar">Continuar</string>
+    <string name="Imgbtn_descriptionBack">Regresar</string>
+    <string name="Imbtn_descriptionhome">Home</string>
+    <string name="Imbtn_descriptionUser">User</string>
+    <string name="Imbtn_descriptionMenu">Menu</string>
+    <string name="ImgV_descriptionlogoa">Logo EcoGarden</string>
+
+    <string name="txtV_Registro">¿Aún no estas registrado?</string>
+    <string name="btn_Registrarse">Registrarse</string>
     <string name="btn_restablecerContra">Restablecer</string>
     <string name="btn_nuevaContrasena">Aceptar</string>
+
     <string name="btn_huertoSeleccionado">Ir al huerto seleccionado</string>
     <string name="btn_crearHuerto">Ingresar Huerto</string>
     <string name="btn_crearHuerto1">Crear</string>
+
     <string name="btn_cateAbono">Abono</string>
     <string name="btn_cateAgua">Agua</string>
     <string name="btn_cateEnergia">Energía</string>
     <string name="btn_cateCrecimiento">Crecimiento</string>
     <string name="btn_estadisticas">Estadísticas</string>
-    <string name="btn_calcular">Calcular</string>
-    <string name="btn_descriptionhome">Home</string>
-    <string name="btn_descriptionFotoI">Foto inicial</string>
-    <string name="btn_descriptionFotoF">Foto final</string>
-    <string name="btn_guardarCambios">Guardar cambios</string>
+
     <string name="btn_categorias">Categorías</string>
-    <string name="btn_energia">Energía</string>
-    <string name="btn_crecimiento">Crecimiento</string>
-    <string name="btn_abono">Abono</string>
-    <string name="btn_tips">Tips</string>
+
     <string name="btn_principiante">Principiante</string>
     <string name="btn_intermedio">Intermedio</string>
     <string name="btn_avanzado">Avanzado</string>
     <string name="btn_logros">Tus logros</string>
+
     <string name="btn_compartir">Compartir</string>
+
+    <string name="btn_guardarCambios">Guardar cambios</string>
+    <string name="btn_calcular">Calcular</string>
+    <string name="txtV_Reg_Fecha">Fecha</string>
+    <string name="eTxt_Reg_fecha">dd / mm / aa </string>
+    <string name="eTxt_Reg_valor">$ Ingresa una cantidad </string>
+
+    <string name="txtV_RegAb_Title">Registro Uso de Abono</string>
+    <string name="txtV_RegAb_CantAb">Cantidad de abono utilizado</string>
+    <string name="eTxt_RegAb_kilos">En kilos</string>
+    <string name="txtV_RegAb_ValAb">Valor de abono por kilo</string>
+    <string name="txtV_RegAg_Title">Registro Consumo de Agua</string>
+    <string name="txtV_RegAg_CantAg">Cantidad de agua utilizada</string>
+    <string name="eTxt_RegAg_litros">En Litros</string>
+    <string name="txtV_RegAg_ValAg">Valor de agua por Litro</string>
+    <string name="txtV_RegEn_Title">Registro Consumo de Energía Eléctrica</string>
+    <string name="txtV_RegEn_potencia">Potencia del dispositivo eléctrico</string>
+    <string name="eTxt_RegEn_kw">En kilovatios (kW)</string>
+    <string name="txtV_RegEn_tiempo">Tiempo de uso del dispositivo</string>
+    <string name="eTxt_RegEn_horas">Horas de uso</string>
+    <string name="txtV_RegEn_valor">El valor de kilowats</string>
+
+    <string name="txtV_RegCr_Title">Registro de Crecimiento de las Plantas</string>
+    <string name="txtV_RegCr_elegir">Elige una planta promedio de tu huerto para hacerle la medición</string>
+    <string name="txtV_RegCr_fechaI">Última fecha de registro</string>
+    <string name="txtV_RegCr_alturaI">Última altura registrada de la Planta</string>
+    <string name="txtV_RegCr_fechaF">Fecha de medición</string>
+    <string name="txtV_RegCr_alturaF">Altura actual de la Planta</string>
+    <string name="eTxt_RegCr_Cm">En Centimetros</string>
+
+    <string name="btn_descriptionFotoI">Foto inicial</string>
+    <string name="btn_descriptionFotoF">Foto final</string>
+
+    <string name="txtV_EstEn_Title">Estadísticas y datos importantes ENERGÍA</string>
+    <string name="txtV_EstEn_EnUsada">Cantidad de energía usada</string>
+
+    <string name="txtV_Foto_plantaSeleccionada">Al momento de la medición, tómale una foto a la planta seleccionada, con el fin de crear el histórico de crecimiento. Puedes tomar la foto o subir tu archivo aquí.</string>
 
     <string name="terminoscondiciones"
         tools:ignore="ExtraText">
