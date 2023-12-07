@@ -2,14 +2,17 @@ package com.example.ecogardenapp2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ecogardenapp2.modelos.Abono;
 import com.example.ecogardenapp2.modelos.Agua;
@@ -18,6 +21,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -44,62 +48,68 @@ public class EstadisticaAbono extends AppCompatActivity {
         TextView costTotal = findViewById(R.id.txtV_EstAb_CostAbono);
         TextView fechaProxima = findViewById(R.id.txtV_EstAb_FechaAbono);
 
-        File abonoFile = new File(getFilesDir(), "abono.txt");
-        List<Abono> listaAbono = leerArchivoAbono(abonoFile);
+        try{
+            File abonoFile = new File(getFilesDir(), "abono.txt");
 
-        addElementAbono(listaAbono);
-        addPromedioAbono(listaAbono);
-        addPrecioAbono(listaAbono);
-        addPromedioCosto(listaAbono);
-        calcularTotalCantidadAbono(listaAbono);
-        canTotal.setText(calcularTotalCantidadAbono(listaAbono) +" kilogramos");
-        calcularTotalCostoAbono(listaAbono);
-        costTotal.setText("$ " + calcularTotalCostoAbono(listaAbono));
-        calcularNuevaFecha(listaAbono);
-        Date nuevaFecha = calcularNuevaFecha(listaAbono);
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        String nuevaFechaFormateada = sdf.format(nuevaFecha);
-        fechaProxima.setText("Recomendada: " +nuevaFechaFormateada);
+            List<Abono> listaAbono = leerArchivoAbono(abonoFile);
 
-
-
-        categorias.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent categoriasActividad = new Intent(EstadisticaAbono.this, Categorias.class);
-                startActivity(categoriasActividad);
-
-            }
-        });
-
-        agua.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent aguaActividad = new Intent(EstadisticaAbono.this, EstadisticaAgua.class);
-                startActivity(aguaActividad);
-            }
-        });
+            addElementAbono(listaAbono);
+            addPromedioAbono(listaAbono);
+            addPrecioAbono(listaAbono);
+            addPromedioCosto(listaAbono);
+            calcularTotalCantidadAbono(listaAbono);
+            canTotal.setText(calcularTotalCantidadAbono(listaAbono) +" kilogramos");
+            calcularTotalCostoAbono(listaAbono);
+            costTotal.setText("$ " + calcularTotalCostoAbono(listaAbono));
+            calcularNuevaFecha(listaAbono);
+            Date nuevaFecha = calcularNuevaFecha(listaAbono);
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            String nuevaFechaFormateada = sdf.format(nuevaFecha);
+            fechaProxima.setText("Recomendada: " +nuevaFechaFormateada);
 
 
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                Intent homeActividad = new Intent(EstadisticaAbono.this, ZonaNavegacion.class);
-                startActivity(homeActividad);
-            }
-        });
+            categorias.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+                    Intent categoriasActividad = new Intent(EstadisticaAbono.this, Categorias.class);
+                    startActivity(categoriasActividad);
 
-                Intent backActividad = new Intent(EstadisticaAbono.this, RegistroAbono.class);
-                startActivity(backActividad);
-            }
-        });
+                }
+            });
+
+            agua.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    Intent aguaActividad = new Intent(EstadisticaAbono.this, EstadisticaAgua.class);
+                    startActivity(aguaActividad);
+                }
+            });
+
+
+            home.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    Intent homeActividad = new Intent(EstadisticaAbono.this, ZonaNavegacion.class);
+                    startActivity(homeActividad);
+                }
+            });
+
+            back.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    Intent backActividad = new Intent(EstadisticaAbono.this, RegistroAbono.class);
+                    startActivity(backActividad);
+                }
+            });
+        }catch (Exception er){
+            Toast.makeText(EstadisticaAbono.this, "Error en ejecucion", Toast.LENGTH_SHORT).show();
+            Log.e("TAGJAVIER","Error en ejecucion" + er);
+        }
     }
 
     private void addPromedioAbono(List<Abono> abonoList){
