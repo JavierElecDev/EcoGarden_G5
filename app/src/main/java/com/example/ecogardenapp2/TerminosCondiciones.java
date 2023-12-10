@@ -41,10 +41,9 @@ public class TerminosCondiciones extends AppCompatActivity {
                     Toast.makeText(TerminosCondiciones.this, "Debes aceptar las condiciones", Toast.LENGTH_SHORT).show();
                 }else if(condiciones.isChecked()){
                     Toast.makeText(TerminosCondiciones.this, "Debes aceptar los terminos", Toast.LENGTH_SHORT).show();
+                } else if (!(terminos.isChecked() && condiciones.isChecked())) {
+                    Toast.makeText(TerminosCondiciones.this, "Debes aceptar los terminos y las condiciones!!!", Toast.LENGTH_SHORT).show();
                 }
-
-               /* Intent continuarActividad = new Intent(TerminosCondiciones.this, Registro3Usuario.class);
-                startActivity(continuarActividad);*/
 
             }
         });

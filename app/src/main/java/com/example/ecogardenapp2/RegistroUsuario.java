@@ -72,7 +72,7 @@ public class RegistroUsuario extends AppCompatActivity {
 
                 if(comprobacionPaso2){
                     Toast.makeText(RegistroUsuario.this, "Comprobcion Correcta puede continuar...", Toast.LENGTH_LONG).show();
-                    int telefonocontacto = Integer.parseInt(telefono);
+                    long telefonocontacto = Long.parseLong(telefono);
                     String ciudadIngresada = String.valueOf(ciudades.getSelectedItem());
 
                     datosTemporales.almacenarDatos(nombres,apellidos,ciudadIngresada,direccion,

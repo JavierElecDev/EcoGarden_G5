@@ -35,12 +35,12 @@ public class DatosRegistro implements Serializable {
     FirebaseAuth mAuth;
     private String nombres, apellidos, ciudad, direccion;
     private String correoElectronico, password;
-    private int telefono;
+    private long telefono;
     public boolean exito;
 
     public void almacenarDatos(String nombresTemp, String apellidosTemp, String ciudadTemp,
                                String direccionTemp, String correoETemp, String passTemp,
-                               int telefonoTemp){
+                               long telefonoTemp){
         this.nombres = nombresTemp;
         this.apellidos = apellidosTemp;
         this.ciudad = ciudadTemp;
