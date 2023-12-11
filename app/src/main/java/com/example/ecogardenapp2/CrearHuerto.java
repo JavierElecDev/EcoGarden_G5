@@ -19,6 +19,7 @@ public class CrearHuerto extends AppCompatActivity {
     private TextView nombreHuerto, descripcionHuerto;
     private Spinner tamanoHuerto, tipoDeHuertos;
     private huertosData registroDatos;
+    private Button crearHuerto1;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -30,11 +31,11 @@ public class CrearHuerto extends AppCompatActivity {
         tipoDeHuertos = (Spinner) findViewById(R.id.creaHue_spinner_tipo);
         nombreHuerto = (TextView) findViewById(R.id.creaHue_et_nombreHue);
         descripcionHuerto = (TextView) findViewById(R.id.creaHue_descripcion);
-
+        crearHuerto1 = (Button) findViewById(R.id.crearHuerto1);
         tamanoHuerto.setAdapter(registroDatos.adaptadorTamano(CrearHuerto.this));
         tipoDeHuertos.setAdapter(registroDatos.adaptadorHuertos(CrearHuerto.this));
 
-        Button crearHuerto1 = (Button) findViewById(R.id.crearHuerto1);
+
         ImageButton back = findViewById(R.id.btn_back);
 
 
@@ -44,10 +45,8 @@ public class CrearHuerto extends AppCompatActivity {
                 String[] datos = {nombreHuerto.getText().toString().trim(),
                         tamanoHuerto.getSelectedItem().toString(), tipoDeHuertos.getSelectedItem().toString(),
                         descripcionHuerto.getText().toString()};
-
-                registroDatos.crearHuerto(datos, CrearHuerto.this);
-                if(registroDatos.isCrecionCompleta()){
-                    registroDatos.mensajeExitoCreacion(CrearHuerto.this);
+               boolean registraHuerto = registroDatos.crearHuerto(datos, CrearHuerto.this);
+                if(registraHuerto){
                     tamanoHuerto.setSelection(0);
                     tipoDeHuertos.setSelection(0);
                     nombreHuerto.setText("");

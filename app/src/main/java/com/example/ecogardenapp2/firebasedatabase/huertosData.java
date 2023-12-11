@@ -47,7 +47,7 @@ public class huertosData {
     }
 
     //Chicas este metodo contine la instancia a fire base para crear los huertos en la BD
-    public void crearHuerto(String[] datosNuevoHuerto, Context ventana){
+    public boolean crearHuerto(String[] datosNuevoHuerto, Context ventana){
         FirebaseDatabase baseHuertos = FirebaseDatabase.getInstance();
         DatabaseReference huertosRef = baseHuertos.getReference("HuertosUsuarios");
         String nombre = datosNuevoHuerto[0];
@@ -67,15 +67,15 @@ public class huertosData {
 
                 huertosRef.push().setValue(nuevoHuerto);
                 crecionCompleta = true;
+                mensajeExitoCreacion(ventana);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(ventana, "Error de conexion, no se puedo crear el huerto", Toast.LENGTH_LONG).show();
+                crecionCompleta = false;
             }
         });
-    }
-    public boolean isCrecionCompleta() {
         return crecionCompleta;
     }
 
