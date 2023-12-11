@@ -57,7 +57,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/creaHue_et_nombreHue" />
+        app:layout_constraintTop_toBottomOf="@+id/creaHue_et_nombreHue"
+        android:textAlignment="center"
+        />
 
     <Spinner
         android:id="@+id/creaHue_spinner_tipo"
@@ -65,6 +67,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="12dp"
         android:background="@color/white"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,11 +112,11 @@
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine"
+        app:layout_constraintTop_toBottomOf="@+id/creaHue_descripcion"
         app:srcCompat="@drawable/save" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/creaHue_descripcion"
         android:layout_width="326dp"
         android:layout_height="108dp"
         android:layout_marginTop="24dp"

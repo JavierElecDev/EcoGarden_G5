@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.Serializable;
@@ -36,8 +37,12 @@ public class DatosRegistro implements Serializable {
     private String nombres, apellidos, ciudad, direccion;
     private String correoElectronico, password;
     private long telefono;
-    public boolean exito;
 
+    public static String getUserID() {
+        return userID;
+    }
+
+    private static String userID;
     public void almacenarDatos(String nombresTemp, String apellidosTemp, String ciudadTemp,
                                String direccionTemp, String correoETemp, String passTemp,
                                long telefonoTemp){
@@ -137,6 +142,10 @@ public class DatosRegistro implements Serializable {
     public void iniciarSersion(String correo, String password, Context TerminosCondiciones){
         mAuth = FirebaseAuth.getInstance();
         try {
+            FirebaseUser usuario = mAuth.getCurrentUser();
+            if(usuario != null){
+                userID = usuario.getUid();
+            }
             mAuth.signInWithEmailAndPassword(correo, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
