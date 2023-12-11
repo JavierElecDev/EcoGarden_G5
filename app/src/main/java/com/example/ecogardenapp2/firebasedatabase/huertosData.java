@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.example.ecogardenapp2.Login;
 import com.example.ecogardenapp2.ZonaNavegacion;
 import com.example.ecogardenapp2.clasesLogReg.DatosRegistro;
 import com.google.firebase.database.DataSnapshot;
