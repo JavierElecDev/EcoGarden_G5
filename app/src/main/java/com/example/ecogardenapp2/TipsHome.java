@@ -20,6 +20,7 @@ public class TipsHome extends AppCompatActivity {
         Button intermedio = findViewById(R.id.intermedio);
         Button avanzado = findViewById(R.id.avanzado);
         ImageButton home = findViewById(R.id.btn_home);
+        ImageButton back = findViewById(R.id.btn_back);
 
         principiante.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,5 +57,14 @@ public class TipsHome extends AppCompatActivity {
                 startActivity(homeActividad);
             }
         });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent backActividad = new Intent(TipsHome.this, Categorias.class);
+                startActivity(backActividad);
+            }
+        });
+
     }
 }

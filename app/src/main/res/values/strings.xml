@@ -77,6 +77,8 @@
 
     <string name="txtV_Foto_plantaSeleccionada">Al momento de la medición, tómale una foto a la planta seleccionada, con el fin de crear el histórico de crecimiento. Puedes tomar la foto o subir tu archivo aquí.</string>
 
+    <string name="txtV_tips">De noche las hojas hacen la fotosíntesis, liberando oxígeno que ayuda a filtrar productos químicos tóxicos que se quedan en el aire y asegura que el oxígeno que entra hacia nuestros pulmones sea más limpio.</string>
+
     <string name="terminoscondiciones"
         tools:ignore="ExtraText">
         Términos y condiciones de la aplicación de EcoGarden
