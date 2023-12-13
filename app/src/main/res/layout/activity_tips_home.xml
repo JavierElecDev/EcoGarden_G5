@@ -7,6 +7,81 @@
     tools:context=".TipsHome"
     android:background="@drawable/fondo_pantallas_principal">
 
+
+    <ImageView
+        android:id="@+id/cate_imgLogo1"
+        android:layout_width="112dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logoblancook" />
+
+    <ImageView
+        android:id="@+id/tips_home_sabias"
+        android:layout_width="299dp"
+        android:layout_height="178dp"
+        android:layout_marginTop="104dp"
+        android:background="@drawable/imagencornercurv"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sabias" />
+
+    <TextView
+        android:id="@+id/tips_texto"
+        android:layout_width="375dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/mali_bold"
+        android:text="Tener huertos urbanos mejora la calidad del aire"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tips_home_sabias" />
+
+    <TextView
+        android:id="@+id/tips_principal"
+        android:layout_width="357dp"
+        android:layout_height="134dp"
+        android:background="@color/VerdeOliva"
+        android:fontFamily="@font/inter_bold"
+        android:padding="10dp"
+        android:paddingTop="20dp"
+        android:text="@string/txtV_tips"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.639"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/tips_pregunta"
+        android:layout_width="375dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/mali_bold"
+        android:text="QUÉ AGRICULTOR ERES?"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tips_principal" />
+
     <Button
         android:id="@+id/principiante"
         android:layout_width="123dp"
@@ -61,11 +136,26 @@
         android:contentDescription="@string/btn_descriptionhome"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintHorizontal_bias="0.983"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023"
         app:srcCompat="@drawable/home2" />
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_weight="1"
+        android:backgroundTint="#324807"
+        android:contentDescription="@string/Imgbtn_descriptionBack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -88,14 +88,27 @@
         android:id="@+id/cateEstadisticas"
         android:layout_width="130dp"
         android:layout_height="35dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="#FFFFFF"
         android:text="@string/btn_estadisticas"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.227"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cate_imgEstadisticas" />
+
+    <Button
+        android:id="@+id/cateTips"
+        android:layout_width="130dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="Tips"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cate_imgTips" />
 
     <ImageButton
         android:id="@+id/btn_back"
@@ -170,10 +183,23 @@
         android:background="@drawable/imagencornercurv"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.239"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cateEnergia"
+        app:srcCompat="@drawable/estadisticas" />
+
+    <ImageView
+        android:id="@+id/cate_imgTips"
+        android:layout_width="110dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/imagencornercurv"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.823"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cateCrecimiento"
-        app:srcCompat="@drawable/estadisticas" />
+        app:srcCompat="@drawable/tips" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

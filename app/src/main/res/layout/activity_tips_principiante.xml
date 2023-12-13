@@ -7,6 +7,146 @@
     tools:context=".TipsPrincipiante"
     android:background="@drawable/fondo_pantallas_secundaria">
 
+    <LinearLayout
+        android:id="@+id/cabezal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/VerdeOliva">
+
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:backgroundTint="#324807"
+            android:contentDescription="@string/Imgbtn_descriptionBack"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.044"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@android:drawable/ic_menu_revert" />
+
+
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:backgroundTint="#324807"
+            android:contentDescription="@string/Imbtn_descriptionhome"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.318"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/home2" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="40dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/screen_title"
+            style="@style/TextAppearance.Material3.DisplayLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="@font/mali_bold"
+            android:text="EcoGarden Tips principiante"
+            android:textAlignment="center"
+            android:textColor="@color/Avellana"
+            android:textSize="28dp"
+            app:fontFamily="@font/mali_bold" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_gravity="center"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:backgroundTint="#4FC2A1A1"
+            app:cardCornerRadius="124dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/card_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/Avellana"
+                style="@style/TextAppearance.Material3.DisplaySmall"
+                android:text="Tips
+                Principiantes"/>
+
+            <ImageView
+                android:id="@+id/image_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/regarplantas"
+                android:layout_marginTop="@android:dimen/app_icon_size"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_atras"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="330dp"
+                android:text="Atrás"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                style="@style/Widget.Material3.Button"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_siguiente"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="260dp"
+                android:layout_marginTop="330dp"
+                android:text="Siguiente"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_two"
+            android:layout_width="360dp"
+            android:layout_height="164dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#6A3949AB"
+            app:cardCornerRadius="12dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/card_SUBtitle"
+                style="@style/TextAppearance.Material3.DisplaySmall"
+                android:layout_width="326dp"
+                android:layout_height="110dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="EcoGarden"
+                android:textColor="@color/Avellana"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/logros"
         android:layout_width="123dp"
@@ -19,20 +159,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.989" />
-
-    <ImageButton
-        android:id="@+id/btn_back"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:backgroundTint="#324807"
-        android:contentDescription="@string/btn_descriptionBack"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.298"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.008"
-        app:srcCompat="@android:drawable/ic_menu_revert" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

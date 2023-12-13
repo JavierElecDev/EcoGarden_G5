@@ -20,6 +20,7 @@ public class Categorias extends AppCompatActivity {
         Button energia = findViewById(R.id.cateEnergia);
         Button crecimiento = findViewById(R.id.cateCrecimiento);
         Button estadisticas = findViewById(R.id.cateEstadisticas);
+        Button tips = findViewById(R.id.cateTips);
         ImageButton back = findViewById(R.id.btn_back);
 
         abono.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +69,16 @@ public class Categorias extends AppCompatActivity {
 
                 Intent estadisticasActividad = new Intent(Categorias.this, EstadisticaAgua.class);
                 startActivity(estadisticasActividad);
+
+            }
+        });
+
+        tips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent tipsActividad = new Intent(Categorias.this, TipsHome.class);
+                startActivity(tipsActividad);
 
             }
         });
