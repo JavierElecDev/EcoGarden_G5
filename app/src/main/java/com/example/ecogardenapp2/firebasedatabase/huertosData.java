@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 
 import com.example.ecogardenapp2.ZonaNavegacion;
 import com.example.ecogardenapp2.clasesLogReg.DatosRegistro;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,16 +21,19 @@ import com.google.firebase.database.ValueEventListener;
 
 public class huertosData {
 
-
     public static String[] tamanos = {"Indica el tamaño", "Muy pequeño","Pequeño", "Mediano", "Grandre", "Muy Grande"};
     public static String[] tipoDeHuertos = {"Que tipo de huerto es?", "Huerto doméstico","Huerto Colectivo",
             "Huerto escolar", "Huerto de ocio", "Huerto de producción", "Huerto educativo", "Huerto terapéutico",
     "Huerto ecológico", "Huerto hidropónico", "Huerto urbano vertical", "Huerto urbano flotante"};
 
-    private boolean crecionCompleta;
+    private boolean creacionCompleta;
 
-    //Chicas aca se crea una instancia ya que esta clase obtine el id de firebase para el usuario que se registro
-    private DatosRegistro UserID = new DatosRegistro();
+    //Creare otra instancia de firebase para obtener el id de usuario aca
+    FirebaseAuth idUsuarioGG;
+
+    public huertosData(){
+        idUsuarioGG = FirebaseAuth.getInstance();
+    }
 
     //adaptadores para mostrar las opciones en el spinner
     public ArrayAdapter<String> adaptadorTamano(Context activity){
@@ -53,7 +58,7 @@ public class huertosData {
         String tamano = datosNuevoHuerto[1];
         String tipo = datosNuevoHuerto[2];
         String descripcion = datosNuevoHuerto[3];
-        String Id_usuario = UserID.getUserID();
+        FirebaseUser usuario = idUsuarioGG.getCurrentUser();
 
         huertosRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -62,20 +67,20 @@ public class huertosData {
              */
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 // se instancia la clase Huerto que recibe y genera los datos mendiente un objeto
-                Huerto nuevoHuerto = new Huerto(nombre, tamano, tipo, descripcion,Id_usuario);
+                Huerto nuevoHuerto = new Huerto(nombre, tamano, tipo, descripcion,usuario.getUid());
 
                 huertosRef.push().setValue(nuevoHuerto);
-                crecionCompleta = true;
+                creacionCompleta = true;
                 mensajeExitoCreacion(ventana);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(ventana, "Error de conexion, no se puedo crear el huerto", Toast.LENGTH_LONG).show();
-                crecionCompleta = false;
+                creacionCompleta = false;
             }
         });
-        return crecionCompleta;
+        return creacionCompleta;
     }
 
     public void mensajeExitoCreacion(Context ventana){

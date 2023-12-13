@@ -1,5 +1,6 @@
 package com.example.ecogardenapp2.clasesLogReg;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,7 +10,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.example.ecogardenapp2.CrearHuerto;
 import com.example.ecogardenapp2.Login;
 import com.example.ecogardenapp2.ZonaNavegacion;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,7 +18,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.Serializable;
@@ -38,11 +37,6 @@ public class DatosRegistro implements Serializable {
     private String correoElectronico, password;
     private long telefono;
 
-    public static String getUserID() {
-        return userID;
-    }
-
-    private static String userID;
     public void almacenarDatos(String nombresTemp, String apellidosTemp, String ciudadTemp,
                                String direccionTemp, String correoETemp, String passTemp,
                                long telefonoTemp){
@@ -105,7 +99,7 @@ public class DatosRegistro implements Serializable {
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void unused) {
-                                            //averigurar por que no puedo usar toak o alert aqui!!!
+                                            //averigurar por que no puedo usar toast o alert aqui!!!
                                         }
                                     })
                                     .addOnFailureListener(new OnFailureListener() {
@@ -139,29 +133,26 @@ public class DatosRegistro implements Serializable {
     }
 
     //metodo para iniciar sesión
-    public void iniciarSersion(String correo, String password, Context TerminosCondiciones){
+    public void iniciarSersion(String correo, String password, Context ventana){
         mAuth = FirebaseAuth.getInstance();
         try {
-            FirebaseUser usuario = mAuth.getCurrentUser();
-            if(usuario != null){
-                userID = usuario.getUid();
-            }
             mAuth.signInWithEmailAndPassword(correo, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-
                     if(task.isSuccessful()){
-                        Intent CreaHuerto = new Intent(TerminosCondiciones, ZonaNavegacion.class);
-                        TerminosCondiciones.startActivity(CreaHuerto);
+                        Intent CreaHuerto = new Intent(ventana, ZonaNavegacion.class);
+                        ventana.startActivity(CreaHuerto);
+                        Activity activity = (Activity) ventana;
+                        activity.finish();
                     }else{
-                        Toast.makeText(TerminosCondiciones,
+                        Toast.makeText(ventana,
                                 "Error en conexion intenta de nuevo!!",Toast.LENGTH_SHORT).show();
                     }
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    AlertDialog.Builder FalloConexion = new AlertDialog.Builder(TerminosCondiciones);
+                    AlertDialog.Builder FalloConexion = new AlertDialog.Builder(ventana);
                     FalloConexion.setMessage("Error Fallo Conexion Base de Datos." +
                                     "Error General comunicate con soporte").setCancelable(false)
                             .setPositiveButton("Continuar", new DialogInterface.OnClickListener() {
@@ -178,7 +169,7 @@ public class DatosRegistro implements Serializable {
         }catch (Exception e) {
             // por fi falla buscamos el error
             Log.e("Login", "Error al iniciar sesion:", e);
-            Toast.makeText(TerminosCondiciones, "Error inesperado al iniciar sesión. Por favor, intente nuevamente.", Toast.LENGTH_LONG).show();
+            Toast.makeText(ventana, "Error inesperado al iniciar sesión. Por favor, intente nuevamente.", Toast.LENGTH_LONG).show();
         }
     }
 }

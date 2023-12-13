@@ -7,6 +7,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.example.ecogardenapp2.clasesLogReg.DatosRegistro;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -17,11 +19,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HuertosDelUsuario {
-    private DatosRegistro idDelUsuario = new DatosRegistro();
-    //Recupero el id del usuario que incia sesion
-    private String UserID = idDelUsuario.getUserID().toString();
+
+    // chicas aca creo una variable de la clase fire base para obtenr luego el id de usuario
+    FirebaseAuth idUsuarioGG;
     //creo una lista para recuperar los nombres de los huertos
     private List<String> huertosDelUsuario = new ArrayList<>();
+
+    //se crea un constructor para iniciar la instancia de firbe base
+    public HuertosDelUsuario() {
+        idUsuarioGG = FirebaseAuth.getInstance();
+    }
 
     public void llamarHuertos(Context ventana){
         //obtenemos la instancia a la base de datos, estoes importante siempre chicas
@@ -30,6 +37,8 @@ public class HuertosDelUsuario {
         DatabaseReference huertosUsuario = baseHuertos.getReference("HuertosUsuarios");
         //leno el spiner para que tenga una leyenda incial
         huertosDelUsuario.add("Selecciona tu Huerto.");
+        //se usara para que obtengamos el usuario
+        FirebaseUser usuario = idUsuarioGG.getCurrentUser();
 
         //instnacia de firebase que usa un metodo de escucha
         huertosUsuario.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -45,10 +54,12 @@ public class HuertosDelUsuario {
                     String usuarioID = huertos.child("usuarioID").getValue(String.class);
 
                     // Compara el usuario usando el metodo equals() y verifica que no sea nulo
-                    if (usuarioID != null && usuarioID.equals(UserID)){
+                    if (usuarioID != null && usuarioID.equals(usuario.getUid())){
                         //llenamos el array list
                         String nombreHuerto = huertos.child("nombre").getValue(String.class);
-                        huertosDelUsuario.add(nombreHuerto);
+                        if(nombreHuerto != null){
+                            huertosDelUsuario.add(nombreHuerto);
+                        }
                     }
                 }
             }
